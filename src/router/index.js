@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import GMap from '@/views/GMap';
 import Signup from '@/views/Signup';
 import Login from '@/views/Login';
+import ViewProfile from '@/views/ViewProfile';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
@@ -26,6 +27,14 @@ const routes = [
     path: '/login',
     name: 'Login',
     component: Login
+  },
+  {
+    path: '/profile/:id',
+    name: 'ViewProfile',
+    component: ViewProfile,
+    meta: {
+      requiresAuth: true
+    }
   }
 ];
 
